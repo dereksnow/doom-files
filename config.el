@@ -2,6 +2,11 @@
 
 ;; Place your private configuration here
 
+  (map! (:localleader
+          (:map clojure-mode-map
+            (:prefix ("e" . "eval")
+              "b" #'cider-eval-buffer
+              ))))
 
 ;; Disable evil-snipe so that s key works as standard vim substition
 ;; (after! evil-snipe
