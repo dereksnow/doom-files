@@ -6,6 +6,15 @@
           (:map clojure-mode-map
             (:prefix ("e" . "eval")
               "b" #'cider-eval-buffer
+              )
+            (:prefix ("t" . "test")
+              "t" #'cider-test-run-test
+              "a" #'cider-test-rerun-test
+              "b" #'cider-test-show-report
+              "n" #'cider-test-run-ns-tests
+              "l" #'cider-test-run-loaded-tests
+              "p" #'cider-test-run-project-tests
+              "f" #'cider-test-rerun-failed-tests
               ))))
 
 ;; Disable evil-snipe so that s key works as standard vim substition
