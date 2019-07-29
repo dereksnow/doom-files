@@ -26,3 +26,11 @@
 ;;;;;;;;;;;;;;;;
 ;; Insert time when "todo" marked "done"
 (setq org-log-done t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Disables yas-minor-mode for html yas-snippets conflicts with emmet-expand-line  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-hook 'find-file-hook
+          (lambda ()
+            (when (string= (file-name-extension buffer-file-name) "html")
+              (yas-minor-mode -1))))
